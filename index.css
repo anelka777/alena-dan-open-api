@@ -1,0 +1,21 @@
+
+h1, p {
+    font-family: "Roboto", sans-serif;
+}
+
+p {
+    font-size: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-box {
+    border-radius: 20px;
+    padding: 20px;
+    background-color: rgba(127, 255, 212, 0.6);
+}
