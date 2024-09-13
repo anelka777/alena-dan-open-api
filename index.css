@@ -1,4 +1,14 @@
 
+body {
+    background-color: #EED3D9;
+}
+
+h1 {
+    background-color: #F5E8DD;
+    padding: 10px;
+    border-radius: 10px;;
+}
+
 h1, p {
     font-family: "Roboto", sans-serif;
 }
@@ -7,15 +17,75 @@ p {
     font-size: 20px;
 }
 
+.large-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #B5C0D0;
+    max-width: 1400px;
+    margin:0 auto;
+    padding: 0 0 50px 0;
+    border-radius: 20px;
+}
+
+
 .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .weather-box {
     border-radius: 20px;
+    padding: 10px;
+    border: 1px double #B5C0D0;
+    background-color: #F5E8DD;
+}
+
+.weather-box .current  {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #EED3D9;
+}
+
+.weather-box .tommorow {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgba(181, 192, 208, 0.5);
+}
+
+
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px;
+}
+
+.row div {
+    display: flex;
+    flex-direction: column;
     padding: 20px;
-    background-color: rgba(127, 255, 212, 0.6);
+    border-radius: 20px;
+    background-color:#F5E8DD;
+}
+
+.hidden {
+    display: none;
+}
+
+#toggle-button {
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: 600;
+    background-color:#EED3D9;
+    border: 1px solid rgb(136, 142, 151);
+    cursor: pointer;
+}
+
+#toggle-button:hover {
+    background-color:#71a7f7;
 }
