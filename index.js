@@ -34,28 +34,28 @@ function interpretWeatherCode(code) {
 
 function getWeatherImagePath(code) {
     const weatherImages = {
-        0: 'sunny.png',
-        1: 'mainly_clear.png',
-        2: 'partly_cloudly.png',
-        3: 'overcast.png',
-        45: 'fog.png',
+        0: 'sunny.png', //+
+        1: 'mainly_clear.png', //+
+        2: 'partly_cloudly.png', //+
+        3: 'overcast.png', // +
+        45: 'fog.png', // +
         48: 'rime_fog.png',
-        51: 'light_drizzle.png',
-        53: 'moderate_drizzle.png',
-        55: 'dense_drizzle.png',
+        51: 'drizzle_light.png', // +
+        53: 'drizzle_moderate.png', // +
+        55: 'drizzle_dense.png', // +
         56: 'light_freezing_drizzle.png',
         57: 'dense_freezing_drizzle.png',
-        61: 'slight_rain.png',
-        63: 'moderate_rain.png',
-        65: 'heavy_rain.png',
+        61: 'rain_slight.png', //+
+        63: 'rain_moderate.png', //+
+        65: 'rain_heavy.png', //+
         66: 'light_freezing_rain.png',
         67: 'heavy_freezing_rain.png',
         71: 'slight_snow.png',
         73: 'moderate_snow.png',
         75: 'heavy_snow.png',
-        80: 'slight_rain_showers.png',
-        81: 'moderate_rain_showers.png',
-        82: 'violent_rain_showers.png',
+        80: 'rain_showers_slight.png',
+        81: 'rain_showers_moderate.png',
+        82: 'rain_showers_violent.png',
         85: 'slight_snow_showers.png',
         86: 'heavy_snow_showers.png',
         95: 'thunderstorm.png',
