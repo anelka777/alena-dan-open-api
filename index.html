@@ -12,9 +12,11 @@
 <body>
     <div class="large-container">    
         <div class="container">
-            <h1>Weather Forecast in Sacramento</h1>
+            <div class="h1-box">
+                <h1>Weather Forecast in Sacramento</h1>
+            </div>          
             <button id="toggle-button">Show Tomorrow's Weather</button>
-            <h2 id="weather-header">Weather Now:</h2>
+            <h2 id="weather-header">Now:</h2>
             <div class="weather-box">
                 <div class="current" id="current-weather">
                     <p id="date_now"></p>
@@ -31,12 +33,19 @@
                     <img id="weather_image_tommorow" alt="Current weather" width="50px"></img>
                 </div>
             </div>
-        </div>            
+        </div>
         <div class="container">
-            <h2>Daily:</h2>
-            <div class="weather-box row" id="forecast"></div>
+            <button id="toggle-button-hourly">Show Today's Weather Hourly</button>
+            <h2 id="weather-header-hourly" class="hidden">Hourly:</h2>
+            <div class="hourly hidden" id="today-hourly"></div>
+        </div>
+        <div class="container">
+            <button id="toggle-button-daily">Show Weather Daily</button>
+            <h2 id="weather-header-daily" class="hidden">Daily:</h2>
+            <div class="weather-box row hidden" id="forecast"></div>
         </div>
     </div>
+    <footer></footer>
     <script src="index.js"></script>
 </body>
 </html>
