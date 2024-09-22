@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const isDayNow = timeNow.getHours() >= 6 && timeNow.getHours() < 18;
             console.log(isDayNow)
             updateWeatherDisplay(timeNow, temperatureNow, weatherCodeNow, isDayNow);
-            updateTomorrowWeatherDisplay(timeTomorrow, temperatureTomorrow, weatherCodeTomorrow);git st
+            updateTomorrowWeatherDisplay(timeTomorrow, temperatureTomorrow, weatherCodeTomorrow);
             displayHourlyWeather(hourlyTime, hourlyTemperature, hourlyWeatherCode);
 
 
@@ -249,5 +249,3 @@ document.addEventListener('DOMContentLoaded', function() {
     const copyright = document.createElement('p');
     copyright.innerHTML = `&copy; Alena Danilchenko ${thisYear}`;
     footer.appendChild(copyright);
-
-    
