@@ -1,6 +1,7 @@
 
 body {
     background-color: #EED3D9;
+    /*background-color: #F1B4BB;*/
 }
 
 
@@ -35,6 +36,7 @@ p {
     margin:0 auto;
     padding: 0;
     border-radius: 20px 20px 0 0;
+    border: 2px double #B5C0D0;
 }
 
 
@@ -57,13 +59,18 @@ p {
 .weather-box .current  {
     padding: 10px;
     border-radius: 20px;
-    background-color: #EED3D9;
+    /* background-color: #EED3D9; */
+    background-color: #F5E8DD;
 }
 
-.weather-box .tommorow {
+
+
+.weather-box .tomorrow {
     padding: 10px;
     border-radius: 20px;
-    background-color: rgba(181, 192, 208, 0.5);
+    /* background-color: rgba(181, 192, 208, 0.5); */
+    background-color: #F5E8DD;
+
 }
 
 
@@ -120,7 +127,7 @@ p {
     background-color:#71a7f7;
 }
 
-/**/
+
 footer {
     display: flex;
     flex-direction: column;
@@ -130,9 +137,13 @@ footer {
     max-width: 1400px;
     margin: 0 auto;
     border-radius: 0 0 20px 20px;
-    border: 1px solid #B5C0D0;
+    border: 2px double #B5C0D0;
 }
 
 footer p {
     text-align: center;
+}
+
+.forecast-item {
+    text-align: start;
 }
