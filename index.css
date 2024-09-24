@@ -1,9 +1,7 @@
 
 body {
     background-color: #EED3D9;
-    /*background-color: #F1B4BB;*/
 }
-
 
 .h1-box {
     display: flex;
@@ -14,6 +12,7 @@ body {
     padding: 0 5px;
     width: 100%;
     margin: 0 0 50px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .h1-box h1 {
@@ -37,8 +36,8 @@ p {
     padding: 0;
     border-radius: 20px 20px 0 0;
     border: 2px double #B5C0D0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-
 
 .container {
     display: flex;
@@ -53,26 +52,21 @@ p {
     border-radius: 20px;
     padding: 10px;
     border: 1px double #B5C0D0;
+    box-shadow: 0 0 10px rgba(35, 75, 127, 0.5);
     background-color: #F5E8DD;
 }
 
 .weather-box .current  {
     padding: 10px;
     border-radius: 20px;
-    /* background-color: #EED3D9; */
     background-color: #F5E8DD;
 }
-
-
 
 .weather-box .tomorrow {
     padding: 10px;
     border-radius: 20px;
-    /* background-color: rgba(181, 192, 208, 0.5); */
     background-color: #F5E8DD;
-
 }
-
 
 .row {
     display: flex;
@@ -101,8 +95,10 @@ p {
     padding: 40px;
     margin: 0 40px;
     border-radius: 20px;
-    border: 1px double #B5C0D0;
+    border: 1px double rgb(181, 192, 208);
     background-color: #F5E8DD;
+    box-shadow: 0 0 10px rgba(35, 75, 127, 0.5);
+
 }
 .hourly:not(.hidden) {
     display: flex;
@@ -124,9 +120,9 @@ p {
 #toggle-button:hover,
 #toggle-button-hourly:hover,
 #toggle-button-daily:hover {
-    background-color:#71a7f7;
+    background-color:  rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
-
 
 footer {
     display: flex;
@@ -138,6 +134,7 @@ footer {
     margin: 0 auto;
     border-radius: 0 0 20px 20px;
     border: 2px double #B5C0D0;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 footer p {
