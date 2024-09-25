@@ -132,13 +132,15 @@ function displayHourlyWeather(hourlyTime, hourlyTemperature, hourlyWeatherCode) 
 document.addEventListener('DOMContentLoaded', function() {
     async function fetchData() {
         try {
-            const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=38.5816&longitude=-121.4944&current=temperature_2m,is_day,weather_code&hourly=temperature_2m,weather_code,is_day&daily=weather_code,temperature_2m_max,temperature_2m_min&temperature_unit=fahrenheit&timezone=America%2FLos_Angeles&forecast_days=14&forecast_hours=24');
+            // Первый запрос для получения текущей и дневной погоды
+            const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=38.5816&longitude=-121.4944&current=temperature_2m,is_day,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min&temperature_unit=fahrenheit&timezone=America%2FLos_Angeles&forecast_days=14');
             if (!response.ok) {
                 throw new Error('Request failed');
             }
 
             const data = await response.json();
             console.log(data);
+
 
             const timeNow = new Date(data.current.time);
             console.log("timeNow:", timeNow);
@@ -151,17 +153,23 @@ document.addEventListener('DOMContentLoaded', function() {
             const temperatureTomorrow = data.daily.temperature_2m_max[2];
             const weatherCodeTomorrow = data.daily.weather_code[2];
 
-            const hourlyTime = data.hourly.time;
-            const hourlyTemperature = data.hourly.temperature_2m;
-            const hourlyWeatherCode = data.hourly.weather_code;
 
+            const hourlyResponse = await fetch('https://api.open-meteo.com/v1/forecast?latitude=38.5816&longitude=-121.4944&hourly=temperature_2m,weather_code,is_day&timezone=America%2FLos_Angeles');
+            if (!hourlyResponse.ok) {
+                throw new Error('Hourly request failed');
+            }
+
+            const hourlyData = await hourlyResponse.json();
+            console.log(hourlyData)
+            const hourlyTime = hourlyData.hourly.time;
+            const hourlyTemperature = hourlyData.hourly.temperature_2m;
+            const hourlyWeatherCode = hourlyData.hourly.weather_code;
 
             const isDayNow = timeNow.getHours() >= 6 && timeNow.getHours() < 18;
             console.log(isDayNow)
             updateWeatherDisplay(timeNow, temperatureNow, weatherCodeNow, isDayNow);
             updateTomorrowWeatherDisplay(timeTomorrow, temperatureTomorrow, weatherCodeTomorrow);
             displayHourlyWeather(hourlyTime, hourlyTemperature, hourlyWeatherCode);
-
 
             document.getElementById('toggle-button').addEventListener('click', function() {
                 const currentWeatherDiv = document.getElementById('current-weather');
@@ -205,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const dailyHeader = document.getElementById('weather-header-daily');
                 toggleVisibility(this, dailyWeatherDiv, dailyHeader, 
                     'Show Weather Daily', 'Hide Weather Daily', 'Daily:');
-            })
+            });
 
             const forecastContainer = document.getElementById('forecast');
             forecastContainer.innerHTML = '';
@@ -239,6 +247,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     fetchData();
 });
+
 
     // ============= footer==================
     const today = new Date();
